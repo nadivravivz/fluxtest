@@ -1,0 +1,22 @@
+---
+apiVersion: helm.fluxcd.io/v1
+kind: HelmRelease
+metadata:
+  name: echoapp-test
+  namespace: default
+  annotations:
+    fluxcd.io/automated: "true"
+    filter.fluxcd.io/chart-image: glob:1*
+spec:
+  releaseName: echoapp-test
+  chart:
+    git: git@github.com:nadivravivz/fluxtest.git
+    path: charts/ravivecho
+    ref: master
+  values:
+    image:
+      repository: nadivravivz/echoapp
+      tag: 1.0
+    replicaCount: 1
+    hpa:
+      enabled: false
