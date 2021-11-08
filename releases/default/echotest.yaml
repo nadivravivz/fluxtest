@@ -6,7 +6,6 @@ metadata:
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/tag.chart-image: glob:1.*
     filter.fluxcd.io/app: semver:~1.0
 spec:
   releaseName: echoapp-test
@@ -17,7 +16,6 @@ spec:
   values:
     image:
       repository: nadivravivz/echoapp
-      tag: 1.0
     replicaCount: 1
     hpa:
       enabled: false
