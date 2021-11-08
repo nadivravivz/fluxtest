@@ -7,6 +7,8 @@ metadata:
   annotations:
     fluxcd.io/automated: "true"
     fluxcd.io/tag.app: semver:~1.0
+    repository.fluxcd.io/app: app.image # image value [ values.app.image ]
+    tag.fluxcd.io/app: app.tag # tag value [ values.app.image ]
 spec:
   releaseName: echoapp-test
   chart:
