@@ -6,7 +6,7 @@ metadata:
   namespace: default
   annotations:
     fluxcd.io/automated: "true"
-    filter.fluxcd.io/chart-image: glob:1*
+    filter.fluxcd.io/chart-image: glob:1.*
 spec:
   releaseName: echoapp-test
   chart:
